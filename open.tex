@@ -323,11 +323,11 @@ where $\mathbf{F} = \Diag{ F_1, \ldots, F_K }$. In our transmission scheme, we a
 \subsection{Performance Metrics and Design Objectives}
 The main objective of this work is to design the digital and analog units oft the transmitter, i.e., $\Pi_\ell\brc{\cdot}$ and $\mathbf{A}$, such that the system throughput is optimized. To this end, we need to introduce some performance measures for the evaluation. One commonly used designing criteria is achievable rate per user, which is bounded by \cite{sedaghat2017novel}:
 \begin{equation}
-\bar R\geq \frac{LT_{\mathrm{s}}}{\tau+LT_{\mathrm{s}}}\log\left(1+\frac{\sigma_s^2}{P_{\mathrm{Noise}}+P_{\mathrm{Interference}}}\right),
+\bar R\geq \frac{LT_{\mathrm{s}}}{\tau+LT_{\mathrm{s}}}\log\left(1+\frac{P_{\mathrm{Signal}}}{P_{\mathrm{Noise}}+P_{\mathrm{Interference}}}\right),
 \end{equation}
-where $T_{\mathrm{s}}$ is symbol time, $\tau$ is the duration of guard interval and $P_{\mathrm{Interference}}$ is the average interference power after the decoding/compensation process. The power term $P_{\mathrm{Noise}}$ is the equivalent noise after reception. The variance $\sigma_s^2$ is the power of the information data. 
+where $T_{\mathrm{s}}$ is symbol time, $\tau$ is the duration of guard interval and $P_{\mathrm{Interference}}$ is the average interference power after the decoding/compensation process. The power term $P_{\mathrm{Noise}}$ is the equivalent noise after reception, and $P_{\mathrm{Signal}}$ is the power of the received signal for the user. Since in our transmission scheme we use path loss at the \acp{ut} for estimating the information symbols, the terms $P_Signal$ equals to the power of the information symbols themselves and $P_{\mathrm{Noise}}$ is a normalized version of original noise both of which do not depend on the precoder.
 
-For a system with fixed block length, $\Pi_\ell\brc{\cdot}$ and $\mathbf{A}$ only have influence on $P_{\mathrm{Interference}}$. Thus, the \ac{rss} can be adopted here to assess the distortion between the decoded signals and the intended messages. It is defined as
+Thus, for a system with fixed block length, $\Pi_\ell\brc{\cdot}$ and $\mathbf{A}$ only have influence on $P_{\mathrm{Interference}}$ and the \ac{rss} can be adopted here to assess the distortion between the decoded signals and the intended messages. It is defined as
 \begin{equation}
 \mathrm d(\mathbf S, \tilde{\mathbf Y})=||\tilde{\mathbf Y}-\mathbf S||_{\mathrm{F}}^2=\mathrm{tr}\{(\tilde{\mathbf Y}-\mathbf S)^{\mathsf H}(\tilde{\mathbf Y}-\mathbf S)\}.
 \label{eq:distancegeneral}
